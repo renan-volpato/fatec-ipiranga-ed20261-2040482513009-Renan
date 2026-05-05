@@ -7,24 +7,19 @@ typedef struct No {
     struct No *dir;
 } No;
 
-// Função principal de diagnóstico da atividade
+// Função principal
 void analisar_arvore(No* raiz, int valorBusca);
 
-// Funções auxiliares obrigatórias para organização
+// Funções auxiliares
 void imprimir_nos_internos(No* raiz);
 void imprimir_folhas(No* raiz);
-void imprimir_niveis(No* raiz, int nivel_atual);
+void imprimir_niveis(No* raiz);
 int calcular_altura(No* no);
 int calcular_profundidade(No* raiz, int valor, int profundidade_atual);
 void imprimir_ancestrais(No* raiz, int valor);
 void imprimir_descendentes(No* no);
 
-// Funções extras de apoio para a BST e para a demonstração
-No* criar_no(int valor);
 No* inserir(No* raiz, int valor);
-No* buscar_no(No* raiz, int valor);
-void imprimir_arvore_visual(No* raiz, int espaco);
-void liberar_arvore(No* raiz);
-int calcular_grau(No* no);
+No* buscar(No* raiz, int valor);
 
 #endif
