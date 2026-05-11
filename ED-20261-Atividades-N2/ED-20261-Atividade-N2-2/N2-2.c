@@ -43,12 +43,12 @@ int main() {
     int fb = obterFB(raiz);
 
     printf("Altura da Raiz: %d\n", calcularAltura(raiz));
-    printf("Fator de Balanceamento (FB) da Raiz: %d\n", fb);
+    printf("Fator de Balanceamento da Raiz: %d\n", fb);
 
     if (fb > 1 || fb < -1) {
-        printf("Status: Desbalanceado! \n");
+        printf("desbalanceado \n");
     } else {
-        printf("Status: Balanceado.\n");
+        printf("balanceado \n");
     }
 
     return 0;
