@@ -1,3 +1,7 @@
+/* Desenvolver uma aplicação que simule o funcionamento lógico da calculadora
+financeira HP12c, utilizando os conceitos de Estrutura de Dados de Pilha (Stack)
+para o processamento de expressões em Notação Polonesa Reversa (RPN). */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
