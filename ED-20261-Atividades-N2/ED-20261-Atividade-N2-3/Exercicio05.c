@@ -37,17 +37,9 @@ No *criarNo(int valor)
 No *inserir(No *raiz, int valor)
 {
     // Caso base: posição vazia encontrada
-    if (raiz == NULL)
-    {
-        return criarNo(valor);
-    }
-
+    if (raiz == NULL) return criarNo(valor);
     // Inserção na esquerda
-    if (valor < raiz->dado)
-    {
-        raiz->esq = inserir(raiz->esq, valor);
-    }
-    
+    if (valor < raiz->dado) raiz->esq = inserir(raiz->esq, valor);
     // Inserção na direita
     else if (valor > raiz->dado)
     {
@@ -60,20 +52,9 @@ No *inserir(No *raiz, int valor)
 // Buscar Nó
 No *buscarNo(No *raiz, int valor)
 {
-    if (raiz == NULL)
-    {
-        return NULL;
-    }
-
-    if (raiz->dado == valor)
-    {
-        return raiz;
-    }
-
-    if (valor < raiz->dado)
-    {
-        return buscarNo(raiz->esq, valor);
-    }
+    if (raiz == NULL) return NULL;
+    if (raiz->dado == valor) return raiz;
+    if (valor < raiz->dado) return buscarNo(raiz->esq, valor);
 
     return buscarNo(raiz->dir, valor);
 }
@@ -83,19 +64,13 @@ No *buscarNo(No *raiz, int valor)
 int alturaNo(No *no)
 {
     // Caso base
-    if (no == NULL)
-    {
-        return -1;
-    }
+    if (no == NULL) return -1;
 
     int alturaEsq = alturaNo(no->esq);
     int alturaDir = alturaNo(no->dir);
 
     // Retorna a maior altura + 1
-    if (alturaEsq > alturaDir)
-    {
-        return alturaEsq + 1;
-    }
+    if (alturaEsq > alturaDir) return alturaEsq + 1;
 
     return alturaDir + 1;
 }
@@ -105,22 +80,11 @@ int alturaNo(No *no)
 int profundidadeNo(No *raiz, int valor, int prof)
 {
     // Valor não encontrado
-    if (raiz == NULL)
-    {
-        return -1;
-    }
-
+    if (raiz == NULL) return -1;
     // Valor encontrado
-    if (raiz->dado == valor)
-    {
-        return prof;
-    }
-
+    if (raiz->dado == valor) return prof;
     // Busca na esquerda
-    if (valor < raiz->dado)
-    {
-        return profundidadeNo(raiz->esq, valor, prof + 1);
-    }
+    if (valor < raiz->dado) return profundidadeNo(raiz->esq, valor, prof + 1);
 
     // Busca na direita
     return profundidadeNo(raiz->dir, valor, prof + 1);
@@ -129,23 +93,12 @@ int profundidadeNo(No *raiz, int valor, int prof)
 // Grau do Nó
 int grauNo(No *no)
 {
-    if (no == NULL)
-    {
-        return -1;
-    }
+    if (no == NULL) return -1;
 
     int grau = 0;
 
-    if (no->esq != NULL)
-    {
-        grau++;
-    }
-
-    if (no->dir != NULL)
-    {
-        grau++;
-    }
-
+    if (no->esq != NULL) grau++;
+    if (no->dir != NULL) grau++;
     return grau;
 }
 
