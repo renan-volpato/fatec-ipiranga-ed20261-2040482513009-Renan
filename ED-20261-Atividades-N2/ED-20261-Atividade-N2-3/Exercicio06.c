@@ -6,7 +6,6 @@ Estrutura de Dados - N2-3 */
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef struct No
 {
     int dado;
